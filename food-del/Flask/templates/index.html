@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Ratings</title>
+    <style>
+        {% include 'styles.css' %}
+    </style>
+</head>
+<body>
+    <h1>Restaurant Ratings</h1>
+    <ul>
+        {% for name, rating in ratings.items() %}
+            <li>{{ name }}: {{ rating }}</li>
+        {% endfor %}
+    </ul>
+    <form action="/recommendation" method="post">
+        <label for="title">Enter Restaurant Title:</label><br>
+        <input type="text" id="title" name="title"><br><br>
+        <input type="submit" class="button" value="Get Recommendations">
+    </form>
+</body>
+</html>
